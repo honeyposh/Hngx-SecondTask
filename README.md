@@ -1,8 +1,5 @@
 # API DOCUMENTATION
-<<<<<<< HEAD
 
-=======
->>>>>>> 3a388774f67d15bba08043ae45773123be7d803a
 This API is capable of CRUD opertaion on a person resources
 
 ### Prerequisites
@@ -11,10 +8,7 @@ This API is capable of CRUD opertaion on a person resources
 - You can install mongodb locally or use mongo Atlas
 
 ### Installation
-<<<<<<< HEAD
 
-=======
->>>>>>> 3a388774f67d15bba08043ae45773123be7d803a
 1.Clone the repository
 
 ```
@@ -41,13 +35,9 @@ npm start
 ```
 
 ### Usage
-<<<<<<< HEAD
 
 There are four different endpoint
 
-=======
-There are four different endpoint
->>>>>>> 3a388774f67d15bba08043ae45773123be7d803a
 #### router.post("/api")
 
 - To create a person resources
