@@ -1,11 +1,12 @@
-#API DOCUMENTATION
+# API DOCUMENTATION
 This API is capable of CRUD opertaion on a person resources
-###Prerequisites
+
+### Prerequisites
 
 - firstly you have to install Node.js
 - You can install mongodb locally or use mongo Atlas
 
-###Installation
+### Installation
 1.Clone the repository
 
 ```
@@ -29,20 +30,20 @@ db_password="yourpassword"
 npm start
 ```
 
-###Usage
+### Usage
 There are four different endpoint
-####router.post("/api")
+#### router.post("/api")
 
 - To create a person resources
 
-####router.get("/api/:user_id")
+#### router.get("/api/:user_id")
 
 - To get details of a person by using the parameter
 
-####router.patch("/api/:user_id)
+#### router.patch("/api/:user_id)
 
 - To update details of an existing person
 
-####router.delete("/api/:user_id")
+#### router.delete("/api/:user_id")
 
 - To remove a person
