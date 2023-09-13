@@ -7,6 +7,7 @@ exports.getUsers = async (req, res, next) => {
     res.status(500).json({ message: error });
   }
 };
+// create user
 exports.createUser = async (req, res, next) => {
   try {
     const user = await User.create(req.body);
@@ -18,6 +19,7 @@ exports.createUser = async (req, res, next) => {
     res.status(500).json({ message: error });
   }
 };
+// get user
 exports.getUser = async (req, res, next) => {
   try {
     const userId = req.params.user_id;
