@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const userRoute = require("./routes/user");
+const userRoute = require("./routes/userRoute");
 const mongoose = require("mongoose");
 const errorRoute = require("./controllers/notFound");
 app.use(express.json());

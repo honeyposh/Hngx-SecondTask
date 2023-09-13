@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/userModel");
 exports.getUsers = async (req, res, next) => {
   try {
     const users = await User.find();
@@ -10,7 +10,10 @@ exports.getUsers = async (req, res, next) => {
 exports.createUser = async (req, res, next) => {
   try {
     const user = await User.create(req.body);
-    res.status(201).json(user);
+    if (/^[a-zA-Z]+$/.test(user.name)) {
+      return res.status(201).json(user);
+    }
+    res.status(400).json({ message: "Enter a valid input" });
   } catch (error) {
     res.status(500).json({ message: error });
   }

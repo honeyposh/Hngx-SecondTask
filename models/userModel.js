@@ -11,5 +11,13 @@ const userSchema = new schema({
     type: Number,
     required: [true, "age must be provided"],
   },
+  sex: {
+    type: String,
+    required: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
 });
 module.exports = mongoose.model("User", userSchema);
