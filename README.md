@@ -15,6 +15,7 @@ git clone https://github.com/honeyposh/Hngx-SecondTask.git
 ```
 
 2.Navigate to the project directory
+
 3.Install the dependecies
 
 ```
@@ -24,6 +25,7 @@ npm install
 4.Configure environment variable by creating .env file in your root directory
 db_user="yourusername"
 db_password="yourpassword"
+
 5.Start the server
 
 ```
