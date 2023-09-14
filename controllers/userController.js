@@ -10,8 +10,9 @@ exports.getUsers = async (req, res, next) => {
 };
 // create user
 exports.createUser = async (req, res, next) => {
+  // /^[a-zA-Z]+$/
   try {
-    if (/^[a-zA-Z]+$/.test(req.body.name)) {
+    if (/^[A-Za-z]+( [A-Za-z]+)?$/.test(req.body.name)) {
       const user = await User.create(req.body);
       return res.status(201).json(user);
     }
@@ -44,7 +45,7 @@ exports.getUser = async (req, res, next) => {
 exports.updateUser = async (req, res, next) => {
   try {
     const name = req.body.name;
-    const name_regex = /^[a-zA-Z]+$/;
+    const name_regex = /^[A-Za-z]+( [A-Za-z]+)?$/;
     if (!name_regex.test(name))
       return res.status(400).json({
         message:
@@ -71,7 +72,7 @@ exports.updateUser = async (req, res, next) => {
         runValidator: true,
       });
       if (!user) {
-        return res.status(404).json({ msg: `No user with name ${userId}` });
+        return res.status(404).json({ msg: `No user with person ${userId}` });
       }
       return res.status(200).json(user);
     }
