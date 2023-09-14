@@ -10,8 +10,8 @@ exports.getUsers = async (req, res, next) => {
 // create user
 exports.createUser = async (req, res, next) => {
   try {
-    const user = await User.create(req.body);
-    if (/^[a-zA-Z]+$/.test(user.name)) {
+    if (/^[a-zA-Z]+$/.test(req.body.name)) {
+      const user = await User.create(req.body);
       return res.status(201).json(user);
     }
     res.status(400).json({ message: "Enter a valid input" });
@@ -35,14 +35,17 @@ exports.getUser = async (req, res, next) => {
 exports.updateUser = async (req, res, next) => {
   try {
     const userId = req.params.user_id;
-    const user = await User.findByIdAndUpdate(userId, req.body, {
-      new: true,
-      runValidator: true,
-    });
-    if (!user) {
-      return res.status(404).json({ msg: `No user with id ${userId}` });
+    if (/^[a-zA-Z]+$/.test(req.body.name)) {
+      const user = await User.findByIdAndUpdate(userId, req.body, {
+        new: true,
+        runValidator: true,
+      });
+      if (!user) {
+        return res.status(404).json({ msg: `No user with id ${userId}` });
+      }
+      return res.status(200).json(user);
     }
-    res.status(200).json(user);
+    res.status(400).json({ message: "Enter a valid input" });
   } catch (error) {
     res.status(500).json({ message: error });
   }

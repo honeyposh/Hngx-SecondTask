@@ -53,3 +53,9 @@ There are four different endpoint
 #### router.delete("/api/:user_id")
 
 - To remove a person
+
+## Demo
+
+The API is live at [https://hngx2-unll.onrender.com/api](https://hngx2-unll.onrender.com/api)
+
+## Documentation with example [here](https://documenter.getpostman.com/view/29716797/2s9YC4VZ3L)

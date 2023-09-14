@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const errorRoute = require("./controllers/notFound");
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(userRoute);
 app.use(errorRoute.notFound);
 require("dotenv").config();
